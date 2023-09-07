@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.bg {
+  width: 1000px;
+  height: 1000px;
+  object-fit: cover;
+}
+
+.image-color {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background: url('./assets/bear-bw.png');
+  width: 1000px;
+  height: 1000px;
+  -webkit-mask-image: url('./assets/mask2.png');
+  -webkit-mask-size: cover;
+  -webkit-mask-position: 0% 0%;
+  mask-image: url('./assets/mask2.png');
+  mask-size: contain;
+  mask-position: 0% 0%;
+  animation: paint 5s steps(57) forwards;
+}
+
+@keyframes paint {
+  from {
+    -webkit-mask-position: 0% 0%;
+    mask-position: 0% 0%;
+  }
+  to {
+    -webkit-mask-position: 100% 0%;
+    mask-position: 80% 0%;
+  }
+}
